@@ -34,7 +34,7 @@ class CusstomButton extends StatelessWidget {
           ),
         ),
         backgroundColor: WidgetStatePropertyAll(
-          backgroundColor ?? Color(0xFFEBF9F1),
+          backgroundColor ?? Color(0x7911237B),
         ),
         fixedSize: WidgetStateProperty.all(
           Size(buttonWidth?.w ?? double.maxFinite, buttonHeight ?? 65.h),
