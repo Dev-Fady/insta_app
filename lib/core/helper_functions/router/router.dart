@@ -31,7 +31,14 @@ GoRouter createRouter(String initialLocation) {
       GoRoute(
         path: RouterName.userPage,
         name: RouterName.userPage,
-        builder: (context, state) => UserView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => LoginUserCubit(
+            infoRepoImpl: InfoRepoImpl(
+              apiService: getIt<ApiService>(),
+            ),
+          ),
+          child: UserView(),
+        ),
       )
     ],
   );
