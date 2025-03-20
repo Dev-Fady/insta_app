@@ -3,17 +3,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:insta_app/core/DI/dependency_injection.dart';
+import 'package:insta_app/core/cache/cache_helper.dart';
 import 'package:insta_app/core/helper_functions/router/router.dart';
 import 'package:insta_app/core/services/custom_bloc_server.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final GoRouter router = initializeRouter();
+  await CacheHelper().init();
   setupGetit();
   Bloc.observer = CustomBlocServer();
-  runApp(MyApp(
-    router: router,
-  ));
+  final GoRouter router = await initializeRouter();
+  runApp(MyApp(router: router));
 }
 
 class MyApp extends StatelessWidget {
