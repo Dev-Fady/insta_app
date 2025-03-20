@@ -3,9 +3,9 @@ import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:insta_app/core/error/faliure.dart';
 import 'package:insta_app/core/services/api/api_service.dart';
-import 'package:insta_app/features/home/data/models/info_model.dart';
-import 'package:insta_app/features/home/domain/entites/data_info_entity.dart';
-import 'package:insta_app/features/home/domain/repo/info_repo.dart';
+import 'package:insta_app/features/auth/data/models/info_model.dart';
+import 'package:insta_app/features/auth/domain/entites/data_info_entity.dart';
+import 'package:insta_app/features/auth/domain/repo/info_repo.dart';
 
 class InfoRepoImpl extends InfoRepo {
   final ApiService apiService;

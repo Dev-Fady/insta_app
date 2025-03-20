@@ -4,16 +4,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insta_app/core/cache/cache_helper.dart';
 import 'package:insta_app/core/widget/custom_snackbar.dart';
-import 'package:insta_app/features/home/presentation/manger/cubit/login_user_cubit.dart';
-import 'package:insta_app/features/home/presentation/view/widget/instagram_logo.dart';
-import 'package:insta_app/features/home/presentation/view/widget/login_button.dart';
-import 'package:insta_app/features/home/presentation/view/widget/username_input_field.dart';
-import 'package:insta_app/features/home/presentation/view/widget/username_label.dart';
+import 'package:insta_app/features/auth/presentation/manger/cubit/login_user_cubit.dart';
+import 'package:insta_app/features/auth/presentation/view/widget/instagram_logo.dart';
+import 'package:insta_app/features/auth/presentation/view/widget/login_button.dart';
+import 'package:insta_app/features/auth/presentation/view/widget/username_input_field.dart';
+import 'package:insta_app/features/auth/presentation/view/widget/username_label.dart';
 
 import '../../../../../core/helper_functions/build_error_message.dart';
 
-class BodyHomePage extends StatelessWidget {
-  BodyHomePage({super.key});
+class BodyAuthPage extends StatelessWidget {
+  BodyAuthPage({super.key});
 
   final TextEditingController userNameController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();

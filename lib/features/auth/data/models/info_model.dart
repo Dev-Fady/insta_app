@@ -1,4 +1,4 @@
-import 'package:insta_app/features/home/domain/entites/data_info_entity.dart';
+import 'package:insta_app/features/auth/domain/entites/data_info_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'info_model.g.dart';
 
