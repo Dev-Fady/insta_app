@@ -11,6 +11,8 @@ dependencies:
   shared_preferences: ^2.5.2
   dartz: ^0.10.1
   flutter_screenutil: ^5.9.3
+  go_router: ^14.8.1
+  get_it: ^8.0.2
 
 # ^ Api
   dio: ^5.8.0
