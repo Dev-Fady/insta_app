@@ -2,7 +2,9 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:insta_app/core/cache/cache_helper.dart';
+import 'package:insta_app/core/helper_functions/router/router_name.dart';
 import 'package:insta_app/core/widget/custom_snackbar.dart';
 import 'package:insta_app/features/auth/presentation/manger/cubit/login_user_cubit.dart';
 import 'package:insta_app/features/auth/presentation/view/widget/instagram_logo.dart';
@@ -30,6 +32,7 @@ class BodyAuthPage extends StatelessWidget {
             type: ContentType.success,
           );
           await CacheHelper().saveData(key: 'isLogin', value: true);
+          context.pushReplacementNamed(RouterName.userPage);
         } else if (state is LoginUserFailure) {
           buildErrorBar(context, state.errorMessage);
         }
