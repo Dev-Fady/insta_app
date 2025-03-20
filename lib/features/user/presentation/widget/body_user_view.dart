@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:insta_app/features/auth/domain/entites/data_info_entity.dart';
 import 'package:insta_app/features/user/presentation/widget/add_story.dart';
 import 'package:insta_app/features/user/presentation/widget/grid_and_profile_toggle.dart';
 import 'package:insta_app/features/user/presentation/widget/image_and_stat.dart';
 import 'name_and_bio.dart';
 
-class BodyUserView extends StatefulWidget {
-  const BodyUserView({super.key});
+class BodyUserView extends StatelessWidget {
+  const BodyUserView({super.key, required this.dataInfoEntity});
 
-  @override
-  State<BodyUserView> createState() => _BodyUserViewState();
-}
+  final DataInfoEntity dataInfoEntity;
 
-class _BodyUserViewState extends State<BodyUserView> {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        const SliverToBoxAdapter(child: ImageAndStat()),
+        SliverToBoxAdapter(
+            child: ImageAndStat(
+          infoEntity: dataInfoEntity,
+        )),
         SliverToBoxAdapter(child: SizedBox(height: 15.h)),
-        SliverToBoxAdapter(child: NameAndBio()),
+        SliverToBoxAdapter(
+            child: NameAndBio(
+          dataInfoEntity: dataInfoEntity,
+        )),
         // SliverToBoxAdapter(
         //   child: CustomDivider(),
         // ),
