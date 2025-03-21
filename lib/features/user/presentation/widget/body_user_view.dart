@@ -28,7 +28,10 @@ class BodyUserView extends StatelessWidget {
         //   child: CustomDivider(),
         // ),
         SliverToBoxAdapter(child: AddStory()),
-        const SliverToBoxAdapter(child: GridAndProfileToggle()),
+        SliverToBoxAdapter(
+            child: SizedBox(
+                height: MediaQuery.of(context).size.height * 0.8,
+                child: GridAndProfileToggle())),
       ],
     );
   }
