@@ -7,7 +7,8 @@ import '../../../domain/entites/posts_entity.dart';
 class ImagePost extends StatelessWidget {
   const ImagePost({
     super.key,
-    required this.postsEntityData, required this.index,
+    required this.postsEntityData,
+    required this.index,
   });
 
   final PostsEntityData postsEntityData;
@@ -17,7 +18,7 @@ class ImagePost extends StatelessWidget {
   Widget build(BuildContext context) {
     return CachedNetworkImage(
       fit: BoxFit.cover,
-      imageUrl: postsEntityData.data.items[index].display_uri,
+      imageUrl: postsEntityData.data.items[index].thumbnail_url ?? '',
       placeholder: (context, url) =>
           const Center(child: CircularProgressIndicator()),
       errorWidget: (context, url, error) => Image.asset(
