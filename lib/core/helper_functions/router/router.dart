@@ -6,11 +6,15 @@ import 'package:insta_app/core/services/api/api_service.dart';
 import 'package:insta_app/features/auth/data/repo/info_repo_impl.dart';
 import 'package:insta_app/features/auth/presentation/manger/cubit/login_user_cubit.dart';
 import 'package:insta_app/features/auth/presentation/view/auth_view.dart';
+// import 'package:insta_app/features/post/data/repo/posts_repo_impl.dart';
+// import 'package:insta_app/features/post/presentation/manger/cubit/posts_cubit.dart';
+import 'package:insta_app/features/post/presentation/view/posts_view.dart';
 import 'package:insta_app/features/user/presentation/view/user_view.dart';
 
 import 'router_name.dart';
 
 GoRouter createRouter(String initialLocation) {
+  // final String userName = CacheHelper().getData(key: 'userName');
   return GoRouter(
     initialLocation: initialLocation,
     routes: [
@@ -39,7 +43,14 @@ GoRouter createRouter(String initialLocation) {
           ),
           child: UserView(),
         ),
-      )
+      ),
+      GoRoute(
+        path: RouterName.postsPage,
+        name: RouterName.postsPage,
+        builder: (context, state) {
+          return PostsView();
+        },
+      ),
     ],
   );
 }
