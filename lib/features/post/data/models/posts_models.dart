@@ -33,14 +33,14 @@ class PostsModels {
 
 @JsonSerializable()
 class ItemsModels {
-  final String display_uri;
+  final String? thumbnail_url;
   final bool is_video;
   final int like_count;
   final int comment_count;
   final String? video_url;
 
   ItemsModels(
-      {required this.display_uri,
+      {this.thumbnail_url,
       required this.is_video,
       required this.like_count,
       required this.comment_count,
@@ -51,7 +51,7 @@ class ItemsModels {
 
   ItemsEntity toEntity() {
     return ItemsEntity(
-      display_uri: display_uri,
+      thumbnail_url: thumbnail_url,
       is_video: is_video,
       like_count: like_count,
       comment_count: comment_count,

@@ -10,14 +10,14 @@ class PostsEntity {
 }
 
 class ItemsEntity {
-  final String display_uri;
+  final String? thumbnail_url;
   final bool is_video;
   final int like_count;
   final int comment_count;
   final String? video_url;
 
   ItemsEntity({
-    required this.display_uri,
+    this.thumbnail_url,
     required this.is_video,
     required this.like_count,
     required this.comment_count,

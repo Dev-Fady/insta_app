@@ -30,7 +30,7 @@ Map<String, dynamic> _$PostsModelsToJson(PostsModels instance) =>
     };
 
 ItemsModels _$ItemsModelsFromJson(Map<String, dynamic> json) => ItemsModels(
-      display_uri: json['display_uri'] as String,
+      thumbnail_url: json['thumbnail_url'] as String?,
       is_video: json['is_video'] as bool,
       like_count: (json['like_count'] as num).toInt(),
       comment_count: (json['comment_count'] as num).toInt(),
@@ -39,7 +39,7 @@ ItemsModels _$ItemsModelsFromJson(Map<String, dynamic> json) => ItemsModels(
 
 Map<String, dynamic> _$ItemsModelsToJson(ItemsModels instance) =>
     <String, dynamic>{
-      'display_uri': instance.display_uri,
+      'thumbnail_url': instance.thumbnail_url,
       'is_video': instance.is_video,
       'like_count': instance.like_count,
       'comment_count': instance.comment_count,
