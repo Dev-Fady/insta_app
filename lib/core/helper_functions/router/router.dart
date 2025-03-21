@@ -56,7 +56,8 @@ GoRouter createRouter(String initialLocation) {
         path: RouterName.videoPage,
         name: RouterName.videoPage,
         builder: (context, state) {
-          return VidePage();
+           final String videoUrl = state.extra as String;
+          return VidePage(videoUrl: videoUrl,);
         },
       ),
     ],

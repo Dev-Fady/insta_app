@@ -24,31 +24,31 @@ class VideoModel {
 }
 
 class VidePage extends StatelessWidget {
-  const VidePage({Key? key}) : super(key: key);
+  VidePage({Key? key, required this.videoUrl}) : super(key: key);
 
-  static final List<VideoModel> _videos = [
-    VideoModel(
-      url:
-          'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
-      userName: 'User One',
-      userImage: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
-      description: 'هذا هو الفيديو الأول',
-      likes: 1200,
-      comments: 56,
-    ),
-    VideoModel(
-      url:
-          'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
-      userName: 'User Two',
-      userImage: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
-      description: 'هذا هو الفيديو الثاني',
-      likes: 980,
-      comments: 40,
-    ),
-  ];
+  final String videoUrl;
 
   @override
   Widget build(BuildContext context) {
+    final List<VideoModel> _videos = [
+      VideoModel(
+        url: videoUrl,
+        userName: 'User One',
+        userImage: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+        description: 'هذا هو الفيديو الأول',
+        likes: 1200,
+        comments: 56,
+      ),
+      VideoModel(
+        url:
+            'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+        userName: 'User Two',
+        userImage: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+        description: 'هذا هو الفيديو الثاني',
+        likes: 980,
+        comments: 40,
+      ),
+    ];
     return Scaffold(
       backgroundColor: Colors.black,
       body: PageView.builder(
