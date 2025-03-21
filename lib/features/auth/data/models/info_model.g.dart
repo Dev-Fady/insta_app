@@ -20,6 +20,7 @@ DataModel _$DataModelFromJson(Map<String, dynamic> json) => DataModel(
       follower_count: (json['follower_count'] as num).toInt(),
       following_count: (json['following_count'] as num).toInt(),
       profile_pic_url_hd: json['profile_pic_url_hd'] as String,
+      media_count: (json['media_count'] as num).toInt(),
       biography: json['biography'] as String,
     );
 
@@ -30,4 +31,5 @@ Map<String, dynamic> _$DataModelToJson(DataModel instance) => <String, dynamic>{
       'following_count': instance.following_count,
       'profile_pic_url_hd': instance.profile_pic_url_hd,
       'biography': instance.biography,
+      'media_count': instance.media_count,
     };

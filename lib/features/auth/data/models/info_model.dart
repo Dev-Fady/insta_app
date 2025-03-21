@@ -23,13 +23,15 @@ class DataModel {
   final int following_count;
   final String profile_pic_url_hd;
   final String biography;
-
+  final int media_count;
+  
   DataModel(
       {required this.username,
       required this.full_name,
       required this.follower_count,
       required this.following_count,
       required this.profile_pic_url_hd,
+      required this.media_count,
       required this.biography});
   factory DataModel.fromJson(Map<String, dynamic> json) =>
       _$DataModelFromJson(json);
@@ -42,6 +44,7 @@ class DataModel {
       followingCount: following_count,
       profilePicUrlJd: profile_pic_url_hd,
       biography: biography,
+      media_count: media_count,
     );
   }
 }

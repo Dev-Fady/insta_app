@@ -12,6 +12,7 @@ class InfoEntity {
   final int followingCount;
   final String profilePicUrlJd;
   final String biography;
+  final int media_count;
 
   InfoEntity({
     required this.userName,
@@ -20,5 +21,6 @@ class InfoEntity {
     required this.followingCount,
     required this.profilePicUrlJd,
     required this.biography,
+    required this.media_count,
   });
 }
