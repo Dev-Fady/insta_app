@@ -26,7 +26,8 @@ class ImageAndStat extends StatelessWidget {
             debugPrint("Error loading image: $error");
           },
         ),
-        BuildStatColumn(number: 45, title: 'Posts'),
+        BuildStatColumn(
+            number: infoEntity.infoEntity.media_count, title: 'Posts'),
         SizedBox(width: 5.w),
         BuildStatColumn(
             number: infoEntity.infoEntity.followerCount, title: 'Followers'),
