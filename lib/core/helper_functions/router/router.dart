@@ -10,6 +10,7 @@ import 'package:insta_app/features/auth/presentation/view/auth_view.dart';
 // import 'package:insta_app/features/post/presentation/manger/cubit/posts_cubit.dart';
 import 'package:insta_app/features/post/presentation/view/posts_view.dart';
 import 'package:insta_app/features/user/presentation/view/user_view.dart';
+import 'package:insta_app/features/video/presentation/view/video_page.dart';
 
 import 'router_name.dart';
 
@@ -49,6 +50,13 @@ GoRouter createRouter(String initialLocation) {
         name: RouterName.postsPage,
         builder: (context, state) {
           return PostsView();
+        },
+      ),
+      GoRoute(
+        path: RouterName.videoPage,
+        name: RouterName.videoPage,
+        builder: (context, state) {
+          return VideoPage();
         },
       ),
     ],
