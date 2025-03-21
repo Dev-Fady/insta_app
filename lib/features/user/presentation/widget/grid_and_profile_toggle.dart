@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:insta_app/features/post/presentation/view/posts_view.dart';
 
 class GridAndProfileToggle extends StatefulWidget {
   const GridAndProfileToggle({super.key});
@@ -15,6 +15,7 @@ class _GridAndProfileToggleState extends State<GridAndProfileToggle> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min, // يمنع الـ Overflow
       children: [
         Container(
           decoration: BoxDecoration(
@@ -30,16 +31,14 @@ class _GridAndProfileToggleState extends State<GridAndProfileToggle> {
             ],
           ),
         ),
-        SizedBox(
-          height: 200.h,
+        Expanded(
+          // السماح للمحتوى بالتمدد حسب الحاجة
           child: ValueListenableBuilder<int>(
             valueListenable: _selectedIndex,
             builder: (context, value, child) {
-              return Center(
-                child: value == 0
-                    ? const Text('عرض الجريد')
-                    : const Text('عرض الصور الشخصية'),
-              );
+              return value == 0
+                  ? const PostsView()
+                  : const Text('عرض الصور الشخصية');
             },
           ),
         ),
