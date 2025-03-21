@@ -33,6 +33,7 @@ dependencies:
   ionicons: ^0.2.2
   awesome_snackbar_content: ^0.1.5
   video_player: ^2.9.3
+  chewie: ^1.7.1
   flutter:
     sdk: flutter
 
