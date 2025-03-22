@@ -44,11 +44,26 @@ class ProgressBar extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 5),
-            LinearProgressIndicator(
-              value: progress.clamp(0, 1),
-              backgroundColor: Colors.white.withOpacity(0.3),
-              color: Colors.red,
-              minHeight: 3,
+            GestureDetector(
+              onTapDown: (details) {
+                final box = context.findRenderObject() as RenderBox;
+                final tapPos = box.globalToLocal(details.globalPosition);
+                final newPosition =
+                    (tapPos.dx / box.size.width * duration.inMilliseconds)
+                        .clamp(0, duration.inMilliseconds);
+                controller.seekTo(Duration(milliseconds: newPosition.toInt()));
+              },
+              child: Container(
+                height: 12,
+                child: LinearProgressIndicator(
+                  value: progress.clamp(0, 1),
+                  backgroundColor: Colors.white.withOpacity(0.3),
+                  color: Colors.red,
+                  minHeight: 5,
+                  borderRadius: BorderRadius.circular(4),
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
+                ),
+              ),
             ),
           ],
         );
