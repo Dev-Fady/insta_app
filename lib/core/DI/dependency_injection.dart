@@ -6,6 +6,8 @@ import 'package:insta_app/features/auth/data/repo/info_repo_impl.dart';
 import 'package:insta_app/features/auth/domain/repo/info_repo.dart';
 import 'package:insta_app/features/post/data/repo/posts_repo_impl.dart';
 import 'package:insta_app/features/post/domain/repo/posts_repo.dart';
+import 'package:insta_app/features/reels/data/repo/reels_repo_impl.dart';
+import 'package:insta_app/features/reels/domain/repo/reels_repo.dart';
 
 final getIt = GetIt.instance;
 
@@ -21,4 +23,8 @@ void setupGetit() {
 
   getIt.registerSingleton<PostsRepo>(
       PostsRepoImpl(apiService: getIt<ApiService>()));
+
+  getIt.registerSingleton<ReelsRepo>(
+      ReelsRepoImpl(apiService: getIt<ApiService>()));
+
 }
