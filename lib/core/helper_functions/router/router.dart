@@ -2,8 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:insta_app/core/DI/dependency_injection.dart';
 import 'package:insta_app/core/cache/cache_helper.dart';
-import 'package:insta_app/core/services/api/api_service.dart';
-import 'package:insta_app/features/auth/data/repo/info_repo_impl.dart';
+import 'package:insta_app/features/auth/domain/repo/info_repo.dart';
 import 'package:insta_app/features/auth/presentation/manger/cubit/login_user_cubit.dart';
 import 'package:insta_app/features/auth/presentation/view/auth_view.dart';
 import 'package:insta_app/features/post/domain/entites/posts_entity.dart';
@@ -26,9 +25,7 @@ GoRouter createRouter(String initialLocation) {
         builder: (context, state) {
           return BlocProvider(
             create: (context) => LoginUserCubit(
-              infoRepoImpl: InfoRepoImpl(
-                apiService: getIt<ApiService>(),
-              ),
+              infoRepo: getIt<InfoRepo>(),
             ),
             child: AuthView(),
           );
@@ -39,9 +36,7 @@ GoRouter createRouter(String initialLocation) {
         name: RouterName.userPage,
         builder: (context, state) => BlocProvider(
           create: (context) => LoginUserCubit(
-            infoRepoImpl: InfoRepoImpl(
-              apiService: getIt<ApiService>(),
-            ),
+            infoRepo: getIt<InfoRepo>(),
           ),
           child: UserView(),
         ),
@@ -57,7 +52,7 @@ GoRouter createRouter(String initialLocation) {
         path: RouterName.videoPage,
         name: RouterName.videoPage,
         builder: (context, state) {
-           final ItemsEntity itemsEntity = state.extra as ItemsEntity;
+          final ItemsEntity itemsEntity = state.extra as ItemsEntity;
           return VidePage(itemsEntity: itemsEntity);
         },
       ),
