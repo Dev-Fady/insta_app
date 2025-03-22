@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insta_app/features/post/presentation/view/posts_view.dart';
+import 'package:insta_app/features/reels/presentation/view/reels_view.dart';
 
 class GridAndProfileToggle extends StatefulWidget {
   const GridAndProfileToggle({super.key});
@@ -36,9 +37,7 @@ class _GridAndProfileToggleState extends State<GridAndProfileToggle> {
           child: ValueListenableBuilder<int>(
             valueListenable: _selectedIndex,
             builder: (context, value, child) {
-              return value == 0
-                  ? const PostsView()
-                  : const Text('عرض الصور الشخصية');
+              return value == 0 ? const PostsView() : const ReelsView();
             },
           ),
         ),
