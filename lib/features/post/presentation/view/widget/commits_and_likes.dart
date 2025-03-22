@@ -42,8 +42,7 @@ class CommitsAndLikes extends StatelessWidget {
                 const SizedBox(width: 4),
                 Text(
                   formatNumber(postsEntityData
-                      .data.items[index].like_count), // تنسيق العدد
-                  style: TextStyle(
+                      .data.items[index].like_count),     style: TextStyle(
                     color: Colors.white,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.bold,
@@ -57,8 +56,7 @@ class CommitsAndLikes extends StatelessWidget {
                 SizedBox(width: 4.w),
                 Text(
                   formatNumber(postsEntityData
-                      .data.items[index].comment_count), // تنسيق العدد
-                  style: TextStyle(
+                      .data.items[index].comment_count),      style: TextStyle(
                     color: Colors.white,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.bold,

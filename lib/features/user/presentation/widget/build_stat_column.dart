@@ -19,7 +19,7 @@ class BuildStatColumn extends StatelessWidget {
     } else if (num >= 1000) {
       return '${(num / 1000).toStringAsFixed(1)}K';
     } else {
-      return NumberFormat.decimalPattern().format(num); // لإضافة الفاصلة عند الحاجة
+      return NumberFormat.decimalPattern().format(num);
     }
   }
 
@@ -36,7 +36,7 @@ class BuildStatColumn extends StatelessWidget {
             return Transform.translate(
               offset: Offset(shakeEffect, 0),
               child: Text(
-                formatNumber(value), // عرض الرقم بصيغة مختصرة
+                formatNumber(value),
                 style: AppTextStyles.bodyLargeBold19,
               ),
             );
