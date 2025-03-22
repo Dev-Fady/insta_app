@@ -29,7 +29,7 @@ class BuildStatColumn extends StatelessWidget {
       children: [
         TweenAnimationBuilder<int>(
           tween: IntTween(begin: 0, end: number),
-          duration: const Duration(milliseconds: 2500),
+          duration: const Duration(milliseconds: 3500),
           builder: (context, value, child) {
             double shakeEffect =
                 sin(value * pi / 10) * (5 * (1 - value / number));
