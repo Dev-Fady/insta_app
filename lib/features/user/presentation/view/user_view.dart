@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:insta_app/core/cache/cache_helper.dart';
+import 'package:insta_app/core/helper_functions/router/router_name.dart';
 import 'package:insta_app/core/theme/app_text_styles.dart';
 
 import '../../../auth/presentation/manger/cubit/login_user_cubit.dart';
@@ -34,6 +36,15 @@ class _UserViewState extends State<UserView> {
                 style: AppTextStyles.heading23Bold,
               ),
               centerTitle: true,
+              actions: [
+                IconButton(
+                  icon: Icon(Icons.logout),
+                  onPressed: () {
+                    CacheHelper().clearData();
+                    context.pushReplacementNamed(RouterName.homePage);
+                  },
+                ),
+              ],
             ),
             body: BodyUserView(dataInfoEntity: state.dataInfoEntity),
           );
