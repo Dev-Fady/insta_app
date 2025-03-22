@@ -37,7 +37,7 @@ class BodyPostsView extends StatelessWidget {
                 onTap: () {
                   if (postsEntityData.data.items[index].is_video == true) {
                     context.pushNamed(RouterName.videoPage,
-                        extra: postsEntityData.data.items[index].video_url);
+                        extra: postsEntityData.data.items[index]);
                   } else {}
                 },
                 child: ClipRRect(

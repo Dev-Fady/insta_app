@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:insta_app/features/post/domain/entites/posts_entity.dart';
 import '../widget/reels_video_item.dart';
+
 class VideoModel {
   final String url;
   final String userName;
@@ -19,20 +21,20 @@ class VideoModel {
 }
 
 class VidePage extends StatelessWidget {
-  VidePage({Key? key, required this.videoUrl}) : super(key: key);
+  VidePage({Key? key, required this.itemsEntity}) : super(key: key);
 
-  final String videoUrl;
+  final ItemsEntity itemsEntity;
 
   @override
   Widget build(BuildContext context) {
     final List<VideoModel> _videos = [
       VideoModel(
-        url: videoUrl,
-        userName: 'User One',
-        userImage: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+        url: itemsEntity.video_url ?? '',
+        userName: '',
+        userImage: '',
         description: 'هذا هو الفيديو الأول',
-        likes: 1200,
-        comments: 56,
+        likes: itemsEntity.like_count,
+        comments: itemsEntity.comment_count,
       ),
       VideoModel(
         url:

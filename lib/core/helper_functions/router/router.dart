@@ -6,6 +6,7 @@ import 'package:insta_app/core/services/api/api_service.dart';
 import 'package:insta_app/features/auth/data/repo/info_repo_impl.dart';
 import 'package:insta_app/features/auth/presentation/manger/cubit/login_user_cubit.dart';
 import 'package:insta_app/features/auth/presentation/view/auth_view.dart';
+import 'package:insta_app/features/post/domain/entites/posts_entity.dart';
 // import 'package:insta_app/features/post/data/repo/posts_repo_impl.dart';
 // import 'package:insta_app/features/post/presentation/manger/cubit/posts_cubit.dart';
 import 'package:insta_app/features/post/presentation/view/posts_view.dart';
@@ -56,8 +57,8 @@ GoRouter createRouter(String initialLocation) {
         path: RouterName.videoPage,
         name: RouterName.videoPage,
         builder: (context, state) {
-           final String videoUrl = state.extra as String;
-          return VidePage(videoUrl: videoUrl,);
+           final ItemsEntity itemsEntity = state.extra as ItemsEntity;
+          return VidePage(itemsEntity: itemsEntity);
         },
       ),
     ],
