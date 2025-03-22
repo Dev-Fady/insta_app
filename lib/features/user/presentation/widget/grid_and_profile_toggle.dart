@@ -27,7 +27,7 @@ class _GridAndProfileToggleState extends State<GridAndProfileToggle> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               _buildIcon(Icons.grid_on, 0),
-              _buildIcon(Icons.person_outline, 1),
+              _buildIcon(Icons.video_collection_rounded, 1),
             ],
           ),
         ),
