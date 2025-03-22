@@ -27,7 +27,7 @@ class CustomSnackbar {
 
     overlay.insert(overlayEntry);
 
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(milliseconds: 1500), () {
       overlayEntry.remove();
     });
   }
