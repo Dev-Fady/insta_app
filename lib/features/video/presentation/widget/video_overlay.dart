@@ -51,13 +51,13 @@ class VideoOverlay extends StatelessWidget {
                     ],
                   ),
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: Text(video.description,
-                      style:
-                          const TextStyle(color: Colors.white, fontSize: 14)),
-                ),
+                // Padding(
+                //   padding:
+                //       const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                //   child: Text(video.description,
+                //       style:
+                //           const TextStyle(color: Colors.white, fontSize: 14)),
+                // ),
               ],
             );
           } else {
