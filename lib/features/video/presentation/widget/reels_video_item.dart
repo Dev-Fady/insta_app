@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:insta_app/features/video/presentation/view/video_page.dart';
-import 'package:insta_app/features/video/presentation/widget/IconButton.dart';
+import 'package:insta_app/features/video/presentation/widget/video_action_buttons.dart';
 import 'package:video_player/video_player.dart';
 import 'package:chewie/chewie.dart';
 import 'progress_bar.dart';
@@ -60,7 +60,12 @@ class _ReelsVideoItemState extends State<ReelsVideoItem> {
                 ? Chewie(controller: _chewieController)
                 : const Center(child: CircularProgressIndicator()),
           ),
-          VideoOverlay(video: widget.video),
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: 50,
+            child: VideoOverlay(video: widget.video),
+          ),
           Align(
             alignment: Alignment.bottomCenter,
             child: ProgressBar(
@@ -70,17 +75,7 @@ class _ReelsVideoItemState extends State<ReelsVideoItem> {
           Positioned(
             bottom: 100,
             right: 16,
-            child: Column(
-              children: [
-                BuildIconButton(
-                    icon: Icons.favorite, label: '${widget.video.likes}'),
-                const SizedBox(height: 20),
-                BuildIconButton(
-                    icon: Icons.comment, label: '${widget.video.comments}'),
-                const SizedBox(height: 20),
-                BuildIconButton(icon: Icons.share, label: 'Share'),
-              ],
-            ),
+            child: VideoActionButtons(widget: widget),
           ),
           if (_showControls) VideoControls(controller: _videoController),
         ],
