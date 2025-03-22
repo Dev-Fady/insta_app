@@ -3,8 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insta_app/core/DI/dependency_injection.dart';
 import 'package:insta_app/core/cache/cache_helper.dart';
-import 'package:insta_app/core/services/api/api_service.dart';
-import 'package:insta_app/features/auth/data/repo/info_repo_impl.dart';
+import 'package:insta_app/features/auth/domain/repo/info_repo.dart';
 import 'package:insta_app/features/auth/presentation/manger/cubit/login_user_cubit.dart';
 import 'package:insta_app/features/video/presentation/view/video_page.dart';
 
@@ -17,9 +16,7 @@ class VideoOverlay extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => LoginUserCubit(
-        infoRepoImpl: InfoRepoImpl(
-          apiService: getIt<ApiService>(),
-        ),
+        infoRepo: getIt<InfoRepo>(),
       )..loginUser(userName: CacheHelper().getData(key: 'userName')),
       child: BlocBuilder<LoginUserCubit, LoginUserState>(
         builder: (context, state) {
