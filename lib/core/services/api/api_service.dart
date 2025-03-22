@@ -18,4 +18,10 @@ abstract class ApiService {
     @Header("x-rapidapi-host") String host,
     @Header("x-rapidapi-key") String apiKey,
   );
+  @GET("reels")
+  Future<dynamic> getReels(
+    @Query("username_or_id_or_url") String username,
+    @Header("x-rapidapi-host") String host,
+    @Header("x-rapidapi-key") String apiKey,
+  );
 }
