@@ -5,10 +5,8 @@ import 'package:insta_app/core/cache/cache_helper.dart';
 import 'package:insta_app/features/auth/domain/repo/info_repo.dart';
 import 'package:insta_app/features/auth/presentation/manger/cubit/login_user_cubit.dart';
 import 'package:insta_app/features/auth/presentation/view/auth_view.dart';
-import 'package:insta_app/features/post/domain/entites/posts_entity.dart';
-// import 'package:insta_app/features/post/data/repo/posts_repo_impl.dart';
-// import 'package:insta_app/features/post/presentation/manger/cubit/posts_cubit.dart';
 import 'package:insta_app/features/post/presentation/view/posts_view.dart';
+import 'package:insta_app/features/reels/domain/entites/reels_entity.dart';
 import 'package:insta_app/features/user/presentation/view/user_view.dart';
 import 'package:insta_app/features/video/presentation/view/video_page.dart';
 
@@ -52,10 +50,13 @@ GoRouter createRouter(String initialLocation) {
         path: RouterName.videoPage,
         name: RouterName.videoPage,
         builder: (context, state) {
-          final ItemsEntity itemsEntity = state.extra as ItemsEntity;
-          return VidePage(itemsEntity: itemsEntity);
+          final Map<String, dynamic> args = state.extra as Map<String, dynamic>;
+          final ReelsEntityData entityData = args['data'];
+          final int initialIndex = args['initialIndex'];
+
+          return VidePage(entityData: entityData, initialIndex: initialIndex);
         },
-      ),
+      )
     ],
   );
 }

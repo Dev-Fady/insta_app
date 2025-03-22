@@ -32,9 +32,12 @@ class ReelsViewBody extends StatelessWidget {
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
-                  if (reelsEntityData.reelsEntity.items[index].is_video == true) {
-                    context.pushNamed(RouterName.videoPage,
-                        extra: reelsEntityData.reelsEntity.items[index]);
+                  if (reelsEntityData.reelsEntity.items[index].is_video ==
+                      true) {
+                    context.pushNamed(
+                      RouterName.videoPage,
+                      extra: {'data': reelsEntityData, 'initialIndex': index},
+                    );
                   } else {}
                 },
                 child: ClipRRect(
