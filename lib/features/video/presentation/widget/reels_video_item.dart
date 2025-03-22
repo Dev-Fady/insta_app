@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:insta_app/features/video/presentation/view/video_page.dart';
+import 'package:insta_app/features/reels/domain/entites/reels_entity.dart';
 import 'package:insta_app/features/video/presentation/widget/video_action_buttons.dart';
 import 'package:video_player/video_player.dart';
 import 'package:chewie/chewie.dart';
@@ -8,9 +8,9 @@ import 'video_controls.dart';
 import 'video_overlay.dart';
 
 class ReelsVideoItem extends StatefulWidget {
-  final VideoModel video;
+  final ReelsEntityItem entityItem;
 
-  const ReelsVideoItem({Key? key, required this.video}) : super(key: key);
+  const ReelsVideoItem({Key? key, required this.entityItem}) : super(key: key);
 
   @override
   State<ReelsVideoItem> createState() => _ReelsVideoItemState();
@@ -24,7 +24,7 @@ class _ReelsVideoItemState extends State<ReelsVideoItem> {
   @override
   void initState() {
     super.initState();
-    _videoController = VideoPlayerController.network(widget.video.url)
+    _videoController = VideoPlayerController.network(widget.entityItem.video_url)
       ..initialize().then((_) => setState(() {}))
       ..play()
       ..setLooping(true);
@@ -64,7 +64,7 @@ class _ReelsVideoItemState extends State<ReelsVideoItem> {
             left: 0,
             right: 0,
             bottom: 50,
-            child: VideoOverlay(video: widget.video),
+            child: VideoOverlay(entityItem: widget.entityItem),
           ),
           Align(
             alignment: Alignment.bottomCenter,

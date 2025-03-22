@@ -15,10 +15,10 @@ class VideoActionButtons extends StatelessWidget {
     return Column(
       children: [
         BuildIconButton(
-            icon: Icons.favorite, label: '${widget.video.likes}'),
+            icon: Icons.favorite, label: '${widget.entityItem.like_count}'),
         const SizedBox(height: 20),
         BuildIconButton(
-            icon: Icons.comment, label: '${widget.video.comments}'),
+            icon: Icons.comment, label: '${widget.entityItem.comment_count}'),
         const SizedBox(height: 20),
         BuildIconButton(icon: Icons.share, label: 'Share'),
       ],
