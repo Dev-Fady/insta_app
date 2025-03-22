@@ -4,14 +4,17 @@ import 'package:insta_app/core/helper_functions/router/router_name.dart';
 import 'package:insta_app/features/post/domain/entites/posts_entity.dart';
 import 'package:insta_app/features/post/presentation/view/widget/commits_and_likes.dart';
 import 'package:insta_app/features/post/presentation/view/widget/image_post.dart';
+import 'package:insta_app/features/reels/domain/entites/reels_entity.dart';
 
 class BodyPostsView extends StatelessWidget {
   const BodyPostsView({
     super.key,
     required this.postsEntityData,
+    required this.reelsEntityData,
   });
 
   final PostsEntityData postsEntityData;
+  final ReelsEntityData reelsEntityData;
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +38,12 @@ class BodyPostsView extends StatelessWidget {
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
-                  if (postsEntityData.data.items[index].is_video == true) {
-                    context.pushNamed(RouterName.videoPage,
-                        extra: postsEntityData.data.items[index]);
+                  if (reelsEntityData.reelsEntity.items[index].is_video ==
+                      true) {
+                    context.pushNamed(
+                      RouterName.videoPage,
+                      extra: {'data': reelsEntityData, 'initialIndex': index},
+                    );
                   } else {}
                 },
                 child: ClipRRect(
