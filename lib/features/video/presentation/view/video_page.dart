@@ -1,10 +1,5 @@
-// screens/facebook_reels_screen.dart
 import 'package:flutter/material.dart';
-// import '../models/video_model.dart';
 import '../widget/reels_video_item.dart';
-// import '../widgets/reels_video_item.dart';
-
-// models/video_model.dart
 class VideoModel {
   final String url;
   final String userName;

@@ -1,7 +1,5 @@
-// widgets/video_overlay.dart
 import 'package:flutter/material.dart';
 import 'package:insta_app/features/video/presentation/view/video_page.dart';
-// import '../models/video_model.dart';
 
 class VideoOverlay extends StatelessWidget {
   final VideoModel video;
